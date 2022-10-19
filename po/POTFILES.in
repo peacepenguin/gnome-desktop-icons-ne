@@ -1,0 +1,16 @@
+askConfirmPopup.js
+askNamePopup.js
+askRenamePopup.js
+createThumbnail.js
+dbusUtils.js
+desktopGrid.js
+desktopIconsUtil.js
+desktopManager.js
+desktopicons-neo.js
+enums.js
+extension.js
+fileItem.js
+preferences.js
+prefs.js
+templateManager.js
+schemas/org.gnome.shell.extensions.desktopicons-neo.gschema.xml
