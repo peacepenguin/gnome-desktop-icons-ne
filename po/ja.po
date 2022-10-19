@@ -1,464 +1,809 @@
-# Japanese translation for desktop-icons.
-# Copyright (C) 2019 desktop-icons's COPYRIGHT HOLDER
-# This file is distributed under the same license as the desktop-icons package.
-# sicklylife <translation@sicklylife.jp>, 2019.
+# Japanese translation for desktop-icons-ng.
+# Copyright (C) 2021-2022 Desktop Icons NG's COPYRIGHT HOLDER
+# This file is distributed under the same license as the desktop-icons-ng package.
+# Hayao Yamada <hayao@fascode.net>, 2021.
+# Mitsuya Shibata <mty.shibata@gmail.com>, 2021.
+# sicklylife <translation@sicklylife.jp>, 2021-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop-icons master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 22:59+0200\n"
-"PO-Revision-Date: 2021-01-18 09:05+0900\n"
+"POT-Creation-Date: 2022-09-29 20:34+0200\n"
+"PO-Revision-Date: 2022-03-18 18:54+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
-"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.1\n"
 
-#: askConfirmPopup.js:35 askNamePopup.js:36 desktopIconsUtil.js:204
+#: autoAr.js:87
+msgid "AutoAr is not installed"
+msgstr ""
+
+#: autoAr.js:88
+msgid ""
+"To be able to work with compressed files, install file-roller and/or gir-1.2-"
+"gnomeAutoAr"
+msgstr ""
+
+#: autoAr.js:223
+#, fuzzy
+msgid "Extracting files"
+msgstr "ここで展開"
+
+#: autoAr.js:240
+#, fuzzy
+msgid "Compressing files"
+msgstr "{0} 個のファイルを圧縮"
+
+#: autoAr.js:294 autoAr.js:621 desktopManager.js:919 fileItemMenu.js:409
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: askConfirmPopup.js:36
-msgid "Delete"
-msgstr "削除"
-
-#: askNamePopup.js:35
+#: autoAr.js:302 askRenamePopup.js:49 desktopManager.js:917
 msgid "OK"
 msgstr "OK"
 
-#: askRenamePopup.js:40
+#: autoAr.js:315 autoAr.js:605
+msgid "Enter a password here"
+msgstr ""
+
+#: autoAr.js:355
+msgid "Removing partial file '${outputFile}'"
+msgstr ""
+
+#: autoAr.js:374
+msgid "Creating destination folder"
+msgstr ""
+
+#: autoAr.js:406
+msgid "Extracting files into '${outputPath}'"
+msgstr ""
+
+#: autoAr.js:436
 #, fuzzy
+msgid "Extraction completed"
+msgstr "ここで展開"
+
+#: autoAr.js:437
+msgid "Extracting '${fullPathFile}' has been completed."
+msgstr ""
+
+#: autoAr.js:443
+#, fuzzy
+msgid "Extraction cancelled"
+msgstr "ここで展開"
+
+#: autoAr.js:444
+msgid "Extracting '${fullPathFile}' has been cancelled by the user."
+msgstr ""
+
+#: autoAr.js:454
+msgid "Passphrase required for ${filename}"
+msgstr ""
+
+#: autoAr.js:457
+msgid "Error during extraction"
+msgstr ""
+
+#: autoAr.js:485
+msgid "Compressing files into '${outputFile}'"
+msgstr ""
+
+#: autoAr.js:498
+msgid "Compression completed"
+msgstr ""
+
+#: autoAr.js:499
+msgid "Compressing files into '${outputFile}' has been completed."
+msgstr ""
+
+#: autoAr.js:503 autoAr.js:510
+msgid "Cancelled compression"
+msgstr ""
+
+#: autoAr.js:504
+msgid "The output file '${outputFile}' already exists."
+msgstr ""
+
+#: autoAr.js:511
+msgid "Compressing files into '${outputFile}' has been cancelled by the user."
+msgstr ""
+
+#: autoAr.js:514
+msgid "Error during compression"
+msgstr ""
+
+#: autoAr.js:546
+#, fuzzy
+msgid "Create archive"
+msgstr "作成"
+
+#: autoAr.js:571
+#, fuzzy
+msgid "Archive name"
+msgstr "ファイル名"
+
+#: autoAr.js:602
+msgid "Password"
+msgstr ""
+
+#: autoAr.js:618
+msgid "Create"
+msgstr "作成"
+
+#: autoAr.js:695
+msgid "Compatible with all operating systems."
+msgstr ""
+
+#: autoAr.js:701
+msgid "Password protected .zip, must be installed on Windows and Mac."
+msgstr ""
+
+#: autoAr.js:707
+msgid "Smaller archives but Linux and Mac only."
+msgstr ""
+
+#: autoAr.js:713
+msgid "Smaller archives but must be installed on Windows and Mac."
+msgstr ""
+
+#: askRenamePopup.js:42
 msgid "Folder name"
-msgstr "新しいフォルダー名"
+msgstr "フォルダー名"
 
-#: askRenamePopup.js:40
+#: askRenamePopup.js:42
 msgid "File name"
-msgstr "名前の変更…"
+msgstr "ファイル名"
 
-#: askRenamePopup.js:47
+#: askRenamePopup.js:49
 msgid "Rename"
-msgstr "名前の変更…"
+msgstr "名前の変更"
 
-#: desktopIconsUtil.js:79
+#: dbusUtils.js:66
+msgid "\"${programName}\" is needed for Desktop Icons"
+msgstr "Desktop Icons には \"${programName}\" が必要です"
+
+#: dbusUtils.js:67
+msgid ""
+"For this functionality to work in Desktop Icons, you must install "
+"\"${programName}\" in your system."
+msgstr ""
+"この機能を Desktop Icons で動作させるには、システムに \"${programName}\" をイ"
+"ンストールする必要があります。"
+
+#: desktopIconsUtil.js:96
 msgid "Command not found"
 msgstr "コマンドが見つかりません"
 
-#: desktopIconsUtil.js:195
-msgid "Do you want to run “{0}”, or display its contents?"
-msgstr "“{0}“を実行しますか？それともファイルの内容を表示しますか？"
-
-#: desktopIconsUtil.js:196
-msgid "“{0}” is an executable text file."
-msgstr "“{0}“は実行可能なテキストファイルです。"
-
-#: desktopIconsUtil.js:200
-msgid "Execute in a terminal"
-msgstr "端末を開く"
-
-#: desktopIconsUtil.js:202
-msgid "Show"
-msgstr "表示"
-
-#: desktopIconsUtil.js:206
-msgid "Execute"
-msgstr "ファイルを実行"
-
-#: desktopManager.js:131
+#: desktopManager.js:229
 msgid "Nautilus File Manager not found"
-msgstr "Nautilus File Managerが見つかりません"
+msgstr "Nautilus ファイルマネージャーが見つかりません"
 
-#: desktopManager.js:132
+#: desktopManager.js:230
 msgid "The Nautilus File Manager is mandatory to work with Desktop Icons NG."
-msgstr "Nautilus File Managerは、Desktop Icons NGを操作するために必須です。"
+msgstr "Desktop Icons NG の動作には Nautilus ファイルマネージャーが必要です。"
 
-#: desktopManager.js:543
+#: desktopManager.js:881
+msgid "Clear Current Selection before New Search"
+msgstr "新しく検索する前に現在の選択を解除してください"
+
+#: desktopManager.js:921
+msgid "Find Files on Desktop"
+msgstr "デスクトップ上のファイルを検索"
+
+#: desktopManager.js:986 desktopManager.js:1669
 msgid "New Folder"
 msgstr "新しいフォルダー"
 
-#: desktopManager.js:547
+#: desktopManager.js:990
 msgid "New Document"
 msgstr "新しいドキュメント"
 
-#: desktopManager.js:552
+#: desktopManager.js:995
 msgid "Paste"
 msgstr "貼り付け"
 
-#: desktopManager.js:556
+#: desktopManager.js:999
 msgid "Undo"
 msgstr "元に戻す"
 
-#: desktopManager.js:560
+#: desktopManager.js:1003
 msgid "Redo"
 msgstr "やり直す"
 
-#: desktopManager.js:566
-msgid "Select all"
-msgstr "全て選択"
+#: desktopManager.js:1009
+msgid "Select All"
+msgstr "すべて選択"
 
-#: desktopManager.js:572
+#: desktopManager.js:1017
 msgid "Show Desktop in Files"
 msgstr "“ファイル”でデスクトップを表示する"
 
-#: desktopManager.js:576 fileItem.js:891
+#: desktopManager.js:1021 fileItemMenu.js:323
 msgid "Open in Terminal"
-msgstr "端末を開く"
+msgstr "端末で開く"
 
-#: desktopManager.js:582
+#: desktopManager.js:1027
 msgid "Change Background…"
-msgstr "背景を変更する…"
+msgstr "背景を変更…"
 
-#: desktopManager.js:591
+#: desktopManager.js:1038
+msgid "Desktop Icons Settings"
+msgstr "Desktop Icons の設定"
+
+#: desktopManager.js:1042
 msgid "Display Settings"
 msgstr "ディスプレイの設定"
 
-#: desktopManager.js:598
-msgid "Desktop Icons settings"
-msgstr ""
+#: desktopManager.js:1727
+msgid "Arrange Icons"
+msgstr "アイコンを整列"
 
-#: desktopManager.js:609
-msgid "Scripts"
-msgstr "スクリプト"
+#: desktopManager.js:1731
+msgid "Arrange By..."
+msgstr "指定して整列..."
 
-#: desktopManager.js:1127 desktopManager.js:1175
-msgid "Error while deleting files"
-msgstr "ファイルの削除中にエラーが発生しました"
+#: desktopManager.js:1740
+msgid "Keep Arranged..."
+msgstr "整列を維持..."
 
-#: desktopManager.js:1201
-msgid "Are you sure you want to permanently delete these items?"
-msgstr "これらのアイテムを完全に削除してもよろしいですか？"
+# デスクトップにあるファイルを疑似フォルダーにまとめる (グループ化する)
+#: desktopManager.js:1744
+msgid "Keep Stacked by type..."
+msgstr "種類ごとに束ねる..."
 
-#: desktopManager.js:1202
-msgid "If you delete an item, it will be permanently lost."
-msgstr "アイテムを削除すると、永久に失われます。"
+#: desktopManager.js:1749
+msgid "Sort Home/Drives/Trash..."
+msgstr "ホーム/ドライブ/ゴミ箱を並べ替え..."
 
-#: desktopManager.js:1310
-msgid "New folder"
-msgstr "新しいフォルダー"
+#: desktopManager.js:1755
+msgid "Sort by Name"
+msgstr "名前で並べ替え"
 
-#: desktopManager.js:1385
-msgid "Can not email a Directory"
-msgstr ""
+#: desktopManager.js:1757
+msgid "Sort by Name Descending"
+msgstr "名前で並べ替え (降順)"
 
-#: desktopManager.js:1386
-msgid "Selection includes a Directory, compress the directory to a file first."
-msgstr ""
+#: desktopManager.js:1760
+msgid "Sort by Modified Time"
+msgstr "更新日で並べ替え"
+
+#: desktopManager.js:1763
+msgid "Sort by Type"
+msgstr "種類で並べ替え"
+
+#: desktopManager.js:1766
+msgid "Sort by Size"
+msgstr "サイズで並べ替え"
 
 #. TRANSLATORS: "Home" is the text that will be shown in the user's personal folder
-#: fileItem.js:151
+#: fileItem.js:171
 msgid "Home"
 msgstr "ホーム"
 
-#: fileItem.js:794
-msgid "Open All..."
-msgstr "全て開く..."
+#: fileItem.js:290
+msgid "Broken Link"
+msgstr "壊れたリンク"
 
-#: fileItem.js:794
+#: fileItem.js:291
+msgid "Can not open this File because it is a Broken Symlink"
+msgstr "シンボリックリンクのリンク先が存在しないためファイルを開けません"
+
+#: fileItem.js:346
+msgid "Broken Desktop File"
+msgstr "壊れたデスクトップファイル"
+
+#: fileItem.js:347
+msgid ""
+"This .desktop file has errors or points to a program without permissions. It "
+"can not be executed.\n"
+"\n"
+"\t<b>Edit the file to set the correct executable Program.</b>"
+msgstr ""
+"エラーがある、または権限がないプログラムを参照する .desktop ファイルです。\n"
+"\n"
+"\t<b>ファイルを開いて正しい実行可能プログラムを設定してください。</b>"
+
+#: fileItem.js:353
+msgid "Invalid Permissions on Desktop File"
+msgstr "無効な権限のデスクトップファイル"
+
+#: fileItem.js:354
+msgid ""
+"This .desktop File has incorrect Permissions. Right Click to edit "
+"Properties, then:\n"
+msgstr ""
+"この .desktop ファイルの権限が正しくありません。右クリックしてプロパティを開"
+"き、次のように変更してください:\n"
+
+#: fileItem.js:356
+msgid ""
+"\n"
+"<b>Set Permissions, in \"Others Access\", \"Read Only\" or \"None\"</b>"
+msgstr ""
+"\n"
+"<b>\"その他のアクセス権\" を \"読み取り専用\" または \"なし\" に設定する</b>"
+
+#: fileItem.js:359
+msgid ""
+"\n"
+"<b>Enable option, \"Allow Executing File as a Program\"</b>"
+msgstr ""
+"\n"
+"<b>\"プログラムとして実行可能\" オプションを有効にする</b>"
+
+#: fileItem.js:367
+msgid ""
+"This .desktop file is not trusted, it can not be launched. To enable "
+"launching, right-click, then:\n"
+"\n"
+"<b>Enable \"Allow Launching\"</b>"
+msgstr ""
+"この .desktop ファイルを信用していないため起動できません。右クリックして次の"
+"ように設定を変更してください:\n"
+"\n"
+"<b>\"起動を許可する\" を有効にする</b>"
+
+#: fileItemMenu.js:132
+msgid "Open All..."
+msgstr "すべて開く..."
+
+#: fileItemMenu.js:132
 msgid "Open"
 msgstr "開く"
 
-#: fileItem.js:801
-msgid "Open All With Other Application..."
-msgstr "別のアプリケーションで開く..."
+# 疑似フォルダーの右クリックメニュー
+#: fileItemMenu.js:143
+msgid "Stack This Type"
+msgstr "この種類を束ねる"
 
-#: fileItem.js:801
+# 疑似フォルダーの右クリックメニュー
+#: fileItemMenu.js:143
+msgid "Unstack This Type"
+msgstr "この種類を並べる"
+
+#: fileItemMenu.js:155
+msgid "Scripts"
+msgstr "スクリプト"
+
+#: fileItemMenu.js:161
+msgid "Open All With Other Application..."
+msgstr "別のアプリケーションですべて開く..."
+
+#: fileItemMenu.js:161
 msgid "Open With Other Application"
 msgstr "別のアプリケーションで開く"
 
-#: fileItem.js:805
+#: fileItemMenu.js:167
 msgid "Launch using Dedicated Graphics Card"
 msgstr "特定のグラフィックカードを使用して起動"
 
-#: fileItem.js:813
+#: fileItemMenu.js:177
+msgid "Run as a program"
+msgstr "プログラムとして実行"
+
+#: fileItemMenu.js:185
 msgid "Cut"
 msgstr "切り取り"
 
-#: fileItem.js:816
+#: fileItemMenu.js:190
 msgid "Copy"
 msgstr "コピー"
 
-#: fileItem.js:820
+#: fileItemMenu.js:196
 msgid "Rename…"
-msgstr "名前の変更…"
+msgstr "名前を変更…"
 
-#: fileItem.js:824
+#: fileItemMenu.js:204
 msgid "Move to Trash"
 msgstr "ゴミ箱へ移動する"
 
-#: fileItem.js:828
+#: fileItemMenu.js:210
 msgid "Delete permanently"
-msgstr "完全に削除する"
+msgstr "完全に削除"
 
-#: fileItem.js:834
+#: fileItemMenu.js:218
 msgid "Don't Allow Launching"
-msgstr "ファイルの起動を許可しない"
+msgstr "起動を許可しない"
 
-#: fileItem.js:834
+#: fileItemMenu.js:218
 msgid "Allow Launching"
 msgstr "起動を許可する"
 
-#: fileItem.js:841
+#: fileItemMenu.js:229
 msgid "Empty Trash"
 msgstr "ゴミ箱を空にする"
 
-#: fileItem.js:848
+#: fileItemMenu.js:240
 msgid "Eject"
 msgstr "取り出す"
 
-#: fileItem.js:855
+#: fileItemMenu.js:246
 msgid "Unmount"
 msgstr "アンマウント"
 
-#: fileItem.js:870
+#: fileItemMenu.js:258 fileItemMenu.js:265
+msgid "Extract Here"
+msgstr "ここで展開"
+
+#: fileItemMenu.js:270
+msgid "Extract To..."
+msgstr "展開先..."
+
+#: fileItemMenu.js:277
 msgid "Send to..."
 msgstr "送る..."
 
-#: fileItem.js:874
+#: fileItemMenu.js:285
+#, fuzzy
+msgid "Compress {0} folder"
+msgid_plural "Compress {0} folders"
+msgstr[0] "{0} 個のファイルを圧縮"
+
+#: fileItemMenu.js:292
 msgid "Compress {0} file"
 msgid_plural "Compress {0} files"
-msgstr[0] "{0}ファイルを圧縮"
+msgstr[0] "{0} 個のファイルを圧縮"
 
-#: fileItem.js:877
+#: fileItemMenu.js:300
 msgid "New Folder with {0} item"
 msgid_plural "New Folder with {0} items"
-msgstr[0] "{0}アイテムと新しいフォルダ"
+msgstr[0] "{0} 個のアイテムを新しいフォルダーへ移動する"
 
-#: fileItem.js:883
-#, fuzzy
+#: fileItemMenu.js:309
 msgid "Common Properties"
-msgstr "プロパティ"
+msgstr "共通のプロパティ"
 
-#: fileItem.js:883
+#: fileItemMenu.js:309
 msgid "Properties"
 msgstr "プロパティ"
 
-#: fileItem.js:887
-#, fuzzy
+#: fileItemMenu.js:316
 msgid "Show All in Files"
-msgstr "“ファイル”で表示する"
+msgstr "“ファイル”ですべて表示する"
 
-#: fileItem.js:887
+#: fileItemMenu.js:316
 msgid "Show in Files"
 msgstr "“ファイル”で表示する"
 
-#: preferences.js:88
+#: fileItemMenu.js:405
+msgid "Select Extract Destination"
+msgstr "展開する宛先を選択"
+
+#: fileItemMenu.js:410
+msgid "Select"
+msgstr "選択"
+
+#: fileItemMenu.js:449
+msgid "Can not email a Directory"
+msgstr "ディレクトリをメールで送ることはできません"
+
+#: fileItemMenu.js:450
+msgid "Selection includes a Directory, compress the directory to a file first."
+msgstr ""
+"ディレクトリが選択されています。ディレクトリはファイルに圧縮してください。"
+
+#: preferences.js:74
 msgid "Settings"
 msgstr "設定"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Size for the desktop icons"
 msgstr "デスクトップアイコンのサイズ"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Tiny"
 msgstr "とても小さい"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Small"
 msgstr "小さい"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Standard"
 msgstr "標準"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Large"
 msgstr "大きい"
 
-#: preferences.js:95
+#: prefswindow.js:47
 msgid "Show the personal folder in the desktop"
 msgstr "デスクトップにホームフォルダーを表示する"
 
-#: preferences.js:96
+#: prefswindow.js:48
 msgid "Show the trash icon in the desktop"
 msgstr "デスクトップにゴミ箱を表示する"
 
-#: preferences.js:97 schemas/org.gnome.shell.extensions.ding.gschema.xml:38
-#, fuzzy
+#: prefswindow.js:49 schemas/org.gnome.shell.extensions.ding.gschema.xml:45
 msgid "Show external drives in the desktop"
-msgstr "デスクトップにホームフォルダーを表示する"
+msgstr "デスクトップに外付けドライブを表示する"
 
-#: preferences.js:98 schemas/org.gnome.shell.extensions.ding.gschema.xml:43
-#, fuzzy
+#: prefswindow.js:50 schemas/org.gnome.shell.extensions.ding.gschema.xml:50
 msgid "Show network drives in the desktop"
-msgstr "デスクトップにホームフォルダーを表示します。"
+msgstr "デスクトップにネットワークドライブを表示する"
 
-#: preferences.js:101
-#, fuzzy
+#: prefswindow.js:53
 msgid "New icons alignment"
-msgstr "アイコンサイズ"
+msgstr "新しいアイコンの配置位置"
 
-#: preferences.js:102
+#: prefswindow.js:54
 msgid "Top-left corner"
 msgstr "左上"
 
-#: preferences.js:103
+#: prefswindow.js:55
 msgid "Top-right corner"
 msgstr "右上"
 
-#: preferences.js:104
+#: prefswindow.js:56
 msgid "Bottom-left corner"
 msgstr "左下"
 
-#: preferences.js:105
+#: prefswindow.js:57
 msgid "Bottom-right corner"
 msgstr "右下"
 
-#: preferences.js:107 schemas/org.gnome.shell.extensions.ding.gschema.xml:48
+#: prefswindow.js:59 schemas/org.gnome.shell.extensions.ding.gschema.xml:55
 msgid "Add new drives to the opposite side of the screen"
-msgstr "画面の反対側に新しいドライブを追加"
+msgstr "新しいドライブのアイコンは反対側に配置する"
 
-#: preferences.js:108
+#: prefswindow.js:60
 msgid "Highlight the drop place during Drag'n'Drop"
-msgstr "ドラッグアンドドロップ中にドロップ場所を強調表示"
+msgstr "ドラッグアンドドロップ中にドロップ先を強調表示する"
 
-#: preferences.js:112
+#: prefswindow.js:61 schemas/org.gnome.shell.extensions.ding.gschema.xml:90
+msgid "Use Nemo to open folders"
+msgstr "Nemo を使用してフォルダーを開く"
+
+#: prefswindow.js:63
+msgid "Add an emblem to soft links"
+msgstr "ソフトリンクにエンブレムを追加する"
+
+#: prefswindow.js:65
+msgid "Use dark text in icon labels"
+msgstr "アイコンのラベルの文字を暗くする"
+
+#. Nautilus options
+#: prefswindow.js:71
 msgid "Settings shared with Nautilus"
-msgstr "Nautilusと共有される設定"
+msgstr "Nautilus と共有される設定"
 
-#: preferences.js:118
+#: prefswindow.js:90
 msgid "Click type for open files"
-msgstr "ファイルを開くクリックの種類"
+msgstr "ファイルを開くときのクリック形式"
 
-#: preferences.js:118
+#: prefswindow.js:90
 msgid "Single click"
 msgstr "シングルクリック"
 
-#: preferences.js:118
+#: prefswindow.js:90
 msgid "Double click"
 msgstr "ダブルクリック"
 
-#: preferences.js:119
+#: prefswindow.js:91
 msgid "Show hidden files"
 msgstr "隠しファイルを表示する"
 
-#: preferences.js:120
+#: prefswindow.js:92
 msgid "Show a context menu item to delete permanently"
-msgstr "メニューに「完全に削除する」を表示する"
+msgstr "コンテキストメニューに“完全に削除”を表示する"
 
-#: preferences.js:123
+#: prefswindow.js:97
 msgid "Action to do when launching a program from the desktop"
 msgstr "デスクトップからプログラムを起動するときに実行するアクション"
 
-#: preferences.js:124
+#: prefswindow.js:98
 msgid "Display the content of the file"
 msgstr "ファイルの内容を表示"
 
-#: preferences.js:125
+#: prefswindow.js:99
 msgid "Launch the file"
 msgstr "ファイルを実行"
 
-#: preferences.js:126
+#: prefswindow.js:100
 msgid "Ask what to do"
-msgstr "何をすべきか尋ねる"
+msgstr "どうするか確認"
 
-#: preferences.js:130
+#: prefswindow.js:106
 msgid "Show image thumbnails"
-msgstr "写真のサムネイルを表示"
+msgstr "画像のサムネイルの表示"
 
-#: preferences.js:131
+#: prefswindow.js:107
 msgid "Never"
 msgstr "しない"
 
-#: preferences.js:132
+#: prefswindow.js:108
 msgid "Local files only"
 msgstr "ローカルファイルのみ"
 
-#: preferences.js:133
+#: prefswindow.js:109
 msgid "Always"
 msgstr "常に"
 
-#: prefs.js:37
-#, fuzzy
-msgid ""
-"To configure Desktop Icons NG, do right-click in the desktop and choose the "
-"last item: 'Desktop Icons settings'"
-msgstr ""
-"デスクトップアイコンNGを設定するには、デスクトップを右クリックして、最後の"
-"「設定」をクリックしてください。"
+#: showErrorPopup.js:40
+msgid "Close"
+msgstr "閉じる"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:18
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:25
 msgid "Icon size"
 msgstr "アイコンサイズ"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:19
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:26
 msgid "Set the size for the desktop icons."
 msgstr "デスクトップのアイコンサイズを設定します。"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:23
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:30
 msgid "Show personal folder"
 msgstr "ホームフォルダーを表示する"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:24
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:31
 msgid "Show the personal folder in the desktop."
 msgstr "デスクトップにホームフォルダーを表示します。"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:28
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:35
 msgid "Show trash icon"
 msgstr "ゴミ箱アイコンを表示する"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:29
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:36
 msgid "Show the trash icon in the desktop."
 msgstr "デスクトップにゴミ箱のアイコンを表示します。"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:33
-#, fuzzy
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:40
 msgid "New icons start corner"
-msgstr "アイコンサイズ"
+msgstr "新しいアイコンの配置位置"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:34
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:41
 msgid "Set the corner from where the icons will start to be placed."
 msgstr "アイコンの配置の基準になるコーナーを設定します。"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:39
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:46
 msgid "Show the disk drives connected to the computer."
-msgstr "コンピューターに接続されているディスクを表示します。"
+msgstr "コンピューターに接続されているディスクドライブを表示します。"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:44
-#, fuzzy
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:51
 msgid "Show mounted network volumes in the desktop."
-msgstr "デスクトップにホームフォルダーを表示します。"
+msgstr "マウント済みのネットワークボリュームをデスクトップに表示します。"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:49
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:56
 msgid ""
 "When adding drives and volumes to the desktop, add them to the opposite side "
 "of the screen."
 msgstr ""
-"ドライブとボリュームをデスクトップに追加するときは、画面の反対側に追加しま"
-"す。"
+"ドライブやボリュームのアイコンをデスクトップに追加する場合、通常の配置位置の"
+"反対側に追加します。"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:53
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:60
 msgid "Shows a rectangle in the destination place during DnD"
-msgstr "ドラッグアンドドロップに宛先に長方形を表示する"
+msgstr "ドラッグアンドドロップ中にドロップ先を枠で囲って強調する"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:54
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:61
 msgid ""
 "When doing a Drag'n'Drop operation, marks the place in the grid where the "
 "icon will be put with a semitransparent rectangle."
 msgstr ""
-"ドラッグアンドドロップをするには、アイコンが配置されているグリッド内を半透明"
-"の長方形でマークします。"
+"ドラッグアンドドロップするときに、アイコンが配置されるドロップ先の場所を半透"
+"明の四角形で強調表示します。"
 
-#, fuzzy
-#~ msgid "Show external disk drives in the desktop"
-#~ msgstr "デスクトップにホームフォルダーを表示する"
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:65
+msgid "Sort Special Folders - Home/Trash Drives."
+msgstr "ホームフォルダー/ゴミ箱/外付けドライブなどの特殊なフォルダーを並べ替え"
 
-#, fuzzy
-#~ msgid "Show the external drives"
-#~ msgstr "デスクトップにホームフォルダーを表示する"
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:66
+msgid ""
+"When arranging Icons on desktop, to sort and change the position of the "
+"Home, Trash and mounted Network or External Drives"
+msgstr ""
+"デスクトップ上のアイコンを整列するときに、ホームフォルダー、ゴミ箱、マウント"
+"されたネットワーク/外付けドライブのアイコンも整列の対象にします。"
 
-#, fuzzy
-#~ msgid "Show network volumes"
-#~ msgstr "“ファイル”で表示する"
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:70
+msgid "Keep Icons Arranged"
+msgstr "アイコンの整列を維持する"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:71
+msgid "Always keep Icons Arranged by the last arranged order"
+msgstr "常に最後に選択した並び順でアイコンが整列されるようにします"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:75
+msgid "Arrange Order"
+msgstr "整列順"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:76
+msgid "Icons Arranged by this property"
+msgstr "このプロパティでアイコンを整列させます"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:80
+msgid "Keep Icons Stacked"
+msgstr "アイコンを束ねる"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:81
+msgid "Always keep Icons Stacked, Similar types are grouped"
+msgstr "常に同じ種類のアイコンを 1 つにまとめてグループ化します"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:85
+msgid "Type of Files to not Stack"
+msgstr "束ねないファイルの種類"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:86
+msgid "An Array of strings types, Don't Stack these types of files"
+msgstr "グループ化しない種類の文字列配列です"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:91
+msgid "Use Nemo instead of Nautilus to open folders."
+msgstr "Nautilus の代わりに Nemo でフォルダーを開きます。"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:95
+msgid "Add an emblem to links"
+msgstr "リンクにエンブレムを追加する"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:96
+msgid "Add an emblem to allow to identify soft links."
+msgstr "ソフトリンクにエンブレムを追加して判別しやすくします。"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:100
+msgid "Use black for label text"
+msgstr "ラベルのテキストの色に黒を使用する"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:101
+msgid ""
+"Paint the label text in black instead of white. Useful when using light "
+"backgrounds."
+msgstr ""
+"ラベルのテキストを白色の代わりに黒色で描画します。明るい背景を使用している場"
+"合に有用です。"
+
+#~ msgid "Add an emblem to .desktop files"
+#~ msgstr ".desktop ファイルにエンブレムを追加する"
+
+#~ msgid ""
+#~ "To configure Desktop Icons NG, do right-click in the desktop and choose "
+#~ "the last item: 'Desktop Icons settings'"
+#~ msgstr ""
+#~ "Desktop Icons NG を設定するには、デスクトップを右クリックし、メニューの末"
+#~ "尾にある“Desktop Icons の設定”をクリックしてください"
+
+#~ msgid "Add an emblem to executable .desktop files"
+#~ msgstr "実行可能な .desktop ファイルにエンブレムを追加する"
+
+#~ msgid "Add an emblem to .desktop files that have permission to be launched."
+#~ msgstr "起動する権限のある .desktop ファイルにエンブレムを追加します。"
+
+#~ msgid "Do you want to run “{0}”, or display its contents?"
+#~ msgstr "“{0}”を実行するか内容を表示するか選択してください"
+
+#~ msgid "“{0}” is an executable text file."
+#~ msgstr "“{0}”は実行可能なテキストファイルです。"
+
+#~ msgid "Execute in a terminal"
+#~ msgstr "端末で実行"
+
+#~ msgid "Show"
+#~ msgstr "表示"
+
+#~ msgid "Execute"
+#~ msgstr "実行"
+
+#~ msgid "New folder"
+#~ msgstr "新しいフォルダー"
+
+#~ msgid "Delete"
+#~ msgstr "削除"
+
+#~ msgid "Error while deleting files"
+#~ msgstr "ファイルの削除中にエラーが発生しました"
+
+#~ msgid "Are you sure you want to permanently delete these items?"
+#~ msgstr "これらのアイテムを完全に削除しますか?"
+
+#~ msgid "If you delete an item, it will be permanently lost."
+#~ msgstr "ここでアイテムを削除すると元に戻すことはできません。"
 
 #~ msgid "Enter file name…"
 #~ msgstr "ファイル名を入力してください…"
-
-#~ msgid "Create"
-#~ msgstr "作成"
 
 #~ msgid "Folder names cannot contain “/”."
 #~ msgstr "“/”は、フォルダー名に含められません。"

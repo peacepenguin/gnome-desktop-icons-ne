@@ -1,18 +1,19 @@
-/* LICENSE INFORMATION
- * 
- * Desktop Icons: Neo - A desktop icons extension for GNOME with numerous features, 
- * customizations, and optimizations.
- * 
- * Copyright 2021 Abdurahman Elmawi (cooper64doom@gmail.com)
- * 
- * This project is based on Desktop Icons NG (https://gitlab.com/rastersoft/desktop-icons-ng),
- * a desktop icons extension for GNOME licensed under the GPL v3.
- * 
- * This project is free and open source software as described in the GPL v3.
- * 
- * This project (Desktop Icons: Neo) is licensed under the GPL v3. To view the details of this license, 
- * visit https://www.gnu.org/licenses/gpl-3.0.html for the necessary information
- * regarding this project's license.
+/* DING: Desktop Icons New Generation for GNOME Shell
+ *
+ * Copyright (C) 2019 Sergio Costas (rastersoft@gmail.com)
+ * Based on code original (C) Carlos Soriano
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 const Gtk = imports.gi.Gtk;
@@ -21,16 +22,20 @@ const GLib = imports.gi.GLib;
 const Gdk = imports.gi.Gdk;
 const Prefs = imports.preferences;
 const Enums = imports.enums;
-const Gettext = imports.gettext.domain('desktopicons-neo');
+const Gettext = imports.gettext.domain('ding');
 
 const _ = Gettext.gettext;
 
+function getModifiersInDnD(context, modifiersToCheck) {
+    let device = context.get_device();
+    let display = device.get_display();
+    let keymap = Gdk.Keymap.get_for_display(display);
+    let modifiers = keymap.get_modifier_state();
+    return ((modifiers & modifiersToCheck) != 0);
+}
+
 function getDesktopDir() {
-    let desktopPath = Prefs.desktopSettings.get_string('desktop-directory');
-    if(desktopPath == 'null'){
-    	desktopPath = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DESKTOP);
-    	Prefs.desktopSettings.set_string('desktop-directory', desktopPath);
-    }
+    let desktopPath = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DESKTOP);
     return Gio.File.new_for_commandline_arg(desktopPath);
 }
 
@@ -39,14 +44,22 @@ function getScriptsDir() {
     return Gio.File.new_for_commandline_arg(scriptsDir);
 }
 
+function getTemplatesDir() {
+    let templatesDir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_TEMPLATES);
+    if ((templatesDir == GLib.get_home_dir()) || (templatesDir == null)) {
+        return null;
+    }
+    return Gio.File.new_for_commandline_arg(templatesDir)
+}
+
 function clamp(value, min, max) {
     return Math.max(Math.min(value, max), min);
 };
 
-function spawnCommandLine(command_line) {
+function spawnCommandLine(command_line, environ=null) {
     try {
         let [success, argv] = GLib.shell_parse_argv(command_line);
-        trySpawn(null, argv);
+        trySpawn(null, argv, environ);
     } catch (err) {
         print(`${command_line} failed with ${err}`);
     }
@@ -60,10 +73,10 @@ function launchTerminal(workdir, command) {
         argv.push('-e');
         argv.push(command);
     }
-    trySpawn(workdir, argv);
+    trySpawn(workdir, argv, null);
 }
 
-function trySpawn(workdir, argv) {
+function trySpawn(workdir, argv, environ=null) {
     /* The following code has been extracted from GNOME Shell's
      * source code in Misc.Util.trySpawn function and modified to
      * set the working directory.
@@ -73,7 +86,7 @@ function trySpawn(workdir, argv) {
 
     var success, pid;
     try {
-        [success, pid] = GLib.spawn_async(workdir, argv, null,
+        [success, pid] = GLib.spawn_async(workdir, argv, environ,
                                           GLib.SpawnFlags.SEARCH_PATH | GLib.SpawnFlags.DO_NOT_REAP_CHILD,
                                           null);
     } catch (err) {
@@ -98,6 +111,21 @@ function trySpawn(workdir, argv) {
     // because then we lose the parent-child relationship, which
     // can break polkit.  See https://bugzilla.redhat.com//show_bug.cgi?id=819275
     GLib.child_watch_add(GLib.PRIORITY_DEFAULT, pid, () => {});
+}
+
+function getFilteredEnviron() {
+    let environ = [];
+    for (let env of GLib.get_environ()) {
+        /* It's a must to remove the WAYLAND_SOCKET environment variable
+            because, under Wayland, DING uses an specific socket to allow the
+            extension to detect its windows. But the scripts must run under
+            the normal socket */
+        if (env.startsWith('WAYLAND_SOCKET=')) {
+            continue;
+        }
+        environ.push(env);
+    }
+    return environ;
 }
 
 function distanceBetweenPoints(x, y, x2, y2) {
@@ -185,54 +213,6 @@ function getFilesFromNautilusDnD(selection, type) {
     return retval;
 }
 
-
-function isExecutable(mimetype, file_name) {
-
-    if (Gio.content_type_can_be_executable(mimetype)) {
-        // Gnome Shell 40 removed this option
-        try {
-            var action = Prefs.nautilusSettings.get_string('executable-text-activation');
-        } catch(e) {
-            var action = 'ask';
-        }
-        switch (action) {
-            default: // display
-                return Enums.WhatToDoWithExecutable.DISPLAY;
-            case 'launch':
-                return Enums.WhatToDoWithExecutable.EXECUTE;
-            case 'ask':
-                let dialog = new Gtk.MessageDialog({
-                    text: _("Do you want to run “{0}”, or display its contents?").replace('{0}', file_name),
-                    secondary_text: _("“{0}” is an executable text file.").replace('{0}', file_name),
-                    message_type: Gtk.MessageType.QUESTION,
-                    buttons: Gtk.ButtonsType.NONE
-                });
-                dialog.add_button(_("Run in terminal"),
-                                  Enums.WhatToDoWithExecutable.EXECUTE_IN_TERMINAL);
-                dialog.add_button(_("Display Text"),
-                                  Enums.WhatToDoWithExecutable.DISPLAY);
-                dialog.add_button(_("Cancel"),
-                                  Gtk.ResponseType.CANCEL);
-                dialog.add_button(_("Execute"),
-                                  Enums.WhatToDoWithExecutable.EXECUTE);
-                dialog.set_default_response(Gtk.ResponseType.CANCEL);
-
-                dialog.show_all();
-                let result = dialog.run();
-                dialog.destroy();
-                if ((result != Enums.WhatToDoWithExecutable.EXECUTE) &&
-                    (result != Enums.WhatToDoWithExecutable.EXECUTE_IN_TERMINAL) &&
-                    (result != Enums.WhatToDoWithExecutable.DISPLAY)) {
-                        return Gtk.ResponseType.CANCEL;
-                } else {
-                        return result;
-                }
-        }
-    } else {
-        return Enums.WhatToDoWithExecutable.DISPLAY;
-    }
-}
-
 function writeTextFileToDesktop(text, filename, dropCoordinates) {
     let path = GLib.build_filenamev([GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DESKTOP),  filename]);
     let file = Gio.File.new_for_path(path);
@@ -257,10 +237,13 @@ function windowHidePagerTaskbarModal(window, modal) {
         window.set_skip_pager_hint(true);
     } else {
         let title = window.get_title();
+        if (title == null) {
+            title = "";
+        }
         if (modal) {
-            title = title;
+            title = title + '  ';
         } else {
-            title = title;
+            title = title + ' ';
         }
         window.set_title(title);
     }
@@ -272,4 +255,13 @@ function windowHidePagerTaskbarModal(window, modal) {
         });
         window.grab_focus();
     }
+}
+
+function waitDelayMs(ms) {
+    return new Promise( (resolve, reject) => {
+        GLib.timeout_add(GLib.PRIORITY_DEFAULT, ms, () => {
+            resolve();
+            return false;
+        });
+    });
 }

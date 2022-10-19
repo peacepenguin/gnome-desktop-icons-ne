@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the desktop-icons package.
 # Massimo Branchini <max.bra.gtalk@gmail.com>, 2019.
 # Milo Casagrande <milo@milo.name>, 2019.
+# Albano Battistella <albano_battistella@hotmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop-icons master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 22:59+0200\n"
-"PO-Revision-Date: 2019-03-12 09:51+0100\n"
+"POT-Creation-Date: 2022-09-29 20:34+0200\n"
+"PO-Revision-Date: 2022-01-10 18:51+0100\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -19,419 +20,643 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: askConfirmPopup.js:35 askNamePopup.js:36 desktopIconsUtil.js:204
+#: autoAr.js:87
+msgid "AutoAr is not installed"
+msgstr ""
+
+#: autoAr.js:88
+msgid ""
+"To be able to work with compressed files, install file-roller and/or gir-1.2-"
+"gnomeAutoAr"
+msgstr ""
+
+#: autoAr.js:223
+#, fuzzy
+msgid "Extracting files"
+msgstr "Estrai qui"
+
+#: autoAr.js:240
+#, fuzzy
+msgid "Compressing files"
+msgstr "Comprimi {0} file"
+
+#: autoAr.js:294 autoAr.js:621 desktopManager.js:919 fileItemMenu.js:409
 msgid "Cancel"
 msgstr "Annulla"
 
-#: askConfirmPopup.js:36
-msgid "Delete"
-msgstr "Elimina"
-
-#: askNamePopup.js:35
+#: autoAr.js:302 askRenamePopup.js:49 desktopManager.js:917
 msgid "OK"
 msgstr "Ok"
 
-#: askRenamePopup.js:40
+#: autoAr.js:315 autoAr.js:605
+msgid "Enter a password here"
+msgstr ""
+
+#: autoAr.js:355
+msgid "Removing partial file '${outputFile}'"
+msgstr ""
+
+#: autoAr.js:374
+msgid "Creating destination folder"
+msgstr ""
+
+#: autoAr.js:406
+msgid "Extracting files into '${outputPath}'"
+msgstr ""
+
+#: autoAr.js:436
 #, fuzzy
+msgid "Extraction completed"
+msgstr "Estrai qui"
+
+#: autoAr.js:437
+msgid "Extracting '${fullPathFile}' has been completed."
+msgstr ""
+
+#: autoAr.js:443
+#, fuzzy
+msgid "Extraction cancelled"
+msgstr "Estrai qui"
+
+#: autoAr.js:444
+msgid "Extracting '${fullPathFile}' has been cancelled by the user."
+msgstr ""
+
+#: autoAr.js:454
+msgid "Passphrase required for ${filename}"
+msgstr ""
+
+#: autoAr.js:457
+msgid "Error during extraction"
+msgstr ""
+
+#: autoAr.js:485
+msgid "Compressing files into '${outputFile}'"
+msgstr ""
+
+#: autoAr.js:498
+msgid "Compression completed"
+msgstr ""
+
+#: autoAr.js:499
+msgid "Compressing files into '${outputFile}' has been completed."
+msgstr ""
+
+#: autoAr.js:503 autoAr.js:510
+msgid "Cancelled compression"
+msgstr ""
+
+#: autoAr.js:504
+msgid "The output file '${outputFile}' already exists."
+msgstr ""
+
+#: autoAr.js:511
+msgid "Compressing files into '${outputFile}' has been cancelled by the user."
+msgstr ""
+
+#: autoAr.js:514
+msgid "Error during compression"
+msgstr ""
+
+#: autoAr.js:546
+#, fuzzy
+msgid "Create archive"
+msgstr "Crea"
+
+#: autoAr.js:571
+#, fuzzy
+msgid "Archive name"
+msgstr "Nome del file"
+
+#: autoAr.js:602
+msgid "Password"
+msgstr ""
+
+#: autoAr.js:618
+msgid "Create"
+msgstr "Crea"
+
+#: autoAr.js:695
+msgid "Compatible with all operating systems."
+msgstr ""
+
+#: autoAr.js:701
+msgid "Password protected .zip, must be installed on Windows and Mac."
+msgstr ""
+
+#: autoAr.js:707
+msgid "Smaller archives but Linux and Mac only."
+msgstr ""
+
+#: autoAr.js:713
+msgid "Smaller archives but must be installed on Windows and Mac."
+msgstr ""
+
+#: askRenamePopup.js:42
 msgid "Folder name"
 msgstr "Nome della cartella"
 
-#: askRenamePopup.js:40
-#, fuzzy
+#: askRenamePopup.js:42
 msgid "File name"
 msgstr "Nome del file"
 
-#: askRenamePopup.js:47
-#, fuzzy
+#: askRenamePopup.js:49
 msgid "Rename"
-msgstr "Rinomina…"
+msgstr "Rinomina"
 
-#: desktopIconsUtil.js:79
+#: dbusUtils.js:66
+msgid "\"${programName}\" is needed for Desktop Icons"
+msgstr ""
+
+#: dbusUtils.js:67
+msgid ""
+"For this functionality to work in Desktop Icons, you must install "
+"\"${programName}\" in your system."
+msgstr ""
+
+#: desktopIconsUtil.js:96
 msgid "Command not found"
 msgstr "Comando non trovato"
 
-#: desktopIconsUtil.js:195
-msgid "Do you want to run “{0}”, or display its contents?"
-msgstr "Vuoi eseguire “{0}”, o visualizzare il suo contenuto?"
-
-#: desktopIconsUtil.js:196
-msgid "“{0}” is an executable text file."
-msgstr "“{0}” è un file di testo eseguibile."
-
-#: desktopIconsUtil.js:200
-#, fuzzy
-msgid "Execute in a terminal"
-msgstr "Apri in Terminale"
-
-#: desktopIconsUtil.js:202
-msgid "Show"
-msgstr "Mostra"
-
-#: desktopIconsUtil.js:206
-msgid "Execute"
-msgstr "Esegui"
-
-#: desktopManager.js:131
+#: desktopManager.js:229
 msgid "Nautilus File Manager not found"
-msgstr "Gestore file Nautilus non trovato"
+msgstr "File Manager Nautilus non trovato"
 
-#: desktopManager.js:132
+#: desktopManager.js:230
 msgid "The Nautilus File Manager is mandatory to work with Desktop Icons NG."
-msgstr "Il Gestore file Nautilus è necessario per funzionare con Desktop Icons NG"
+msgstr ""
+"Il File Manager Nautilus è necessario per funzionare con Desktop Icons NG."
 
-#: desktopManager.js:543
+#: desktopManager.js:881
+msgid "Clear Current Selection before New Search"
+msgstr "Cancella la selezione corrente prima di una nuova ricerca"
+
+#: desktopManager.js:921
+msgid "Find Files on Desktop"
+msgstr "Trova i file sul desktop"
+
+#: desktopManager.js:986 desktopManager.js:1669
 msgid "New Folder"
 msgstr "Nuova cartella"
 
-#: desktopManager.js:547
+#: desktopManager.js:990
 msgid "New Document"
 msgstr "Nuovo documento"
 
-#: desktopManager.js:552
+#: desktopManager.js:995
 msgid "Paste"
 msgstr "Incolla"
 
-#: desktopManager.js:556
+#: desktopManager.js:999
 msgid "Undo"
 msgstr "Annulla"
 
-#: desktopManager.js:560
+#: desktopManager.js:1003
 msgid "Redo"
 msgstr "Ripeti"
 
-#: desktopManager.js:566
-msgid "Select all"
+#: desktopManager.js:1009
+msgid "Select All"
 msgstr "Seleziona tutto"
 
-#: desktopManager.js:572
+#: desktopManager.js:1017
 msgid "Show Desktop in Files"
 msgstr "Mostra la scrivania in File"
 
-#: desktopManager.js:576 fileItem.js:891
+#: desktopManager.js:1021 fileItemMenu.js:323
 msgid "Open in Terminal"
 msgstr "Apri in Terminale"
 
-#: desktopManager.js:582
+#: desktopManager.js:1027
 msgid "Change Background…"
 msgstr "Cambia lo sfondo…"
 
-#: desktopManager.js:591
+#: desktopManager.js:1038
+msgid "Desktop Icons Settings"
+msgstr "Impostazioni di Desktop Icons"
+
+#: desktopManager.js:1042
 msgid "Display Settings"
 msgstr "Impostazioni dello schermo"
 
-#: desktopManager.js:598
-msgid "Desktop Icons settings"
-msgstr "Impostazioni di Desktop Icons"
+#: desktopManager.js:1727
+msgid "Arrange Icons"
+msgstr "Disponi icone"
 
-#: desktopManager.js:609
-msgid "Scripts"
-msgstr "Script"
+#: desktopManager.js:1731
+msgid "Arrange By..."
+msgstr "Disponi per..."
 
-#: desktopManager.js:1127 desktopManager.js:1175
-msgid "Error while deleting files"
-msgstr "Errore durante l'eliminazione dei file"
+#: desktopManager.js:1740
+msgid "Keep Arranged..."
+msgstr "Disposizione automatica..."
 
-#: desktopManager.js:1201
-msgid "Are you sure you want to permanently delete these items?"
-msgstr "Sei sicuro di voler eliminare definitivamente questi elementi?"
+#: desktopManager.js:1744
+msgid "Keep Stacked by type..."
+msgstr "Mantieni inpilato per tipo..."
 
-#: desktopManager.js:1202
-msgid "If you delete an item, it will be permanently lost."
-msgstr "Se elimini un elemento, esso sarà perduto definitivamente."
+#: desktopManager.js:1749
+msgid "Sort Home/Drives/Trash..."
+msgstr "Ordina Home/Drives/Cestino..."
 
-#: desktopManager.js:1310
-#, fuzzy
-msgid "New folder"
-msgstr "Nuova cartella"
+#: desktopManager.js:1755
+msgid "Sort by Name"
+msgstr "Ordina per Nome"
 
-#: desktopManager.js:1385
-msgid "Can not email a Directory"
-msgstr "Non è possibile spedire per email una cartella"
+#: desktopManager.js:1757
+msgid "Sort by Name Descending"
+msgstr "Ordina per Nome discendente"
 
-#: desktopManager.js:1386
-msgid "Selection includes a Directory, compress the directory to a file first."
-msgstr "La selezione include una cartella, comprimere prima la cartella in un file."
+#: desktopManager.js:1760
+msgid "Sort by Modified Time"
+msgstr "Ordina per ora di modifica"
+
+#: desktopManager.js:1763
+msgid "Sort by Type"
+msgstr "Dordina per tipo"
+
+#: desktopManager.js:1766
+msgid "Sort by Size"
+msgstr "Ordina per dimensione"
 
 #. TRANSLATORS: "Home" is the text that will be shown in the user's personal folder
-#: fileItem.js:151
+#: fileItem.js:171
 msgid "Home"
 msgstr "Home"
 
-#: fileItem.js:794
+#: fileItem.js:290
+msgid "Broken Link"
+msgstr ""
+
+#: fileItem.js:291
+msgid "Can not open this File because it is a Broken Symlink"
+msgstr ""
+
+#: fileItem.js:346
+#, fuzzy
+msgid "Broken Desktop File"
+msgstr "Mostra la scrivania in File"
+
+#: fileItem.js:347
+msgid ""
+"This .desktop file has errors or points to a program without permissions. It "
+"can not be executed.\n"
+"\n"
+"\t<b>Edit the file to set the correct executable Program.</b>"
+msgstr ""
+
+#: fileItem.js:353
+msgid "Invalid Permissions on Desktop File"
+msgstr ""
+
+#: fileItem.js:354
+msgid ""
+"This .desktop File has incorrect Permissions. Right Click to edit "
+"Properties, then:\n"
+msgstr ""
+
+#: fileItem.js:356
+msgid ""
+"\n"
+"<b>Set Permissions, in \"Others Access\", \"Read Only\" or \"None\"</b>"
+msgstr ""
+
+#: fileItem.js:359
+msgid ""
+"\n"
+"<b>Enable option, \"Allow Executing File as a Program\"</b>"
+msgstr ""
+
+#: fileItem.js:367
+msgid ""
+"This .desktop file is not trusted, it can not be launched. To enable "
+"launching, right-click, then:\n"
+"\n"
+"<b>Enable \"Allow Launching\"</b>"
+msgstr ""
+
+#: fileItemMenu.js:132
 msgid "Open All..."
 msgstr "Apri tutto..."
 
-#: fileItem.js:794
+#: fileItemMenu.js:132
 msgid "Open"
 msgstr "Apri"
 
-#: fileItem.js:801
-#, fuzzy
+#: fileItemMenu.js:143
+msgid "Stack This Type"
+msgstr "Impila questo tipo"
+
+#: fileItemMenu.js:143
+msgid "Unstack This Type"
+msgstr "Disimpila questo tipo"
+
+#: fileItemMenu.js:155
+msgid "Scripts"
+msgstr "Script"
+
+#: fileItemMenu.js:161
 msgid "Open All With Other Application..."
 msgstr "Apri tutto con un'altra applicazione"
 
-#: fileItem.js:801
+#: fileItemMenu.js:161
 msgid "Open With Other Application"
 msgstr "Apri con un'altra applicazione"
 
-#: fileItem.js:805
+#: fileItemMenu.js:167
 msgid "Launch using Dedicated Graphics Card"
 msgstr "Esegui con la scheda grafica dedicata"
 
-#: fileItem.js:813
+#: fileItemMenu.js:177
+msgid "Run as a program"
+msgstr ""
+
+#: fileItemMenu.js:185
 msgid "Cut"
 msgstr "Taglia"
 
-#: fileItem.js:816
+#: fileItemMenu.js:190
 msgid "Copy"
 msgstr "Copia"
 
-#: fileItem.js:820
+#: fileItemMenu.js:196
 msgid "Rename…"
 msgstr "Rinomina…"
 
-#: fileItem.js:824
+#: fileItemMenu.js:204
 msgid "Move to Trash"
 msgstr "Sposta nel cestino"
 
-#: fileItem.js:828
+#: fileItemMenu.js:210
 msgid "Delete permanently"
 msgstr "Elimina definitivamente"
 
-#: fileItem.js:834
-#, fuzzy
+#: fileItemMenu.js:218
 msgid "Don't Allow Launching"
 msgstr "Non permettere l'esecuzione"
 
-#: fileItem.js:834
+#: fileItemMenu.js:218
 msgid "Allow Launching"
 msgstr "Permetti l'esecuzione"
 
-#: fileItem.js:841
+#: fileItemMenu.js:229
 msgid "Empty Trash"
 msgstr "Svuota il cestino"
 
-#: fileItem.js:848
+#: fileItemMenu.js:240
 msgid "Eject"
 msgstr "Espelli"
 
-#: fileItem.js:855
+#: fileItemMenu.js:246
 msgid "Unmount"
 msgstr "Smonta"
 
-#: fileItem.js:870
+#: fileItemMenu.js:258 fileItemMenu.js:265
+msgid "Extract Here"
+msgstr "Estrai qui"
+
+#: fileItemMenu.js:270
+msgid "Extract To..."
+msgstr "Estrai in..."
+
+#: fileItemMenu.js:277
 msgid "Send to..."
 msgstr "Invia a..."
 
-#: fileItem.js:874
+#: fileItemMenu.js:285
+#, fuzzy
+msgid "Compress {0} folder"
+msgid_plural "Compress {0} folders"
+msgstr[0] "Comprimi {0} file"
+msgstr[1] "Comprimi {0} files"
+
+#: fileItemMenu.js:292
 msgid "Compress {0} file"
 msgid_plural "Compress {0} files"
 msgstr[0] "Comprimi {0} file"
-msgstr[1] ""
+msgstr[1] "Comprimi {0} files"
 
-#: fileItem.js:877
+#: fileItemMenu.js:300
 msgid "New Folder with {0} item"
 msgid_plural "New Folder with {0} items"
-msgstr[0] "Nuova cartella con {0} elementi"
-msgstr[1] ""
+msgstr[0] "Nuova cartella con {0} elemento"
+msgstr[1] "Nuova cartella con {0} elementi"
 
-#: fileItem.js:883
-#, fuzzy
+#: fileItemMenu.js:309
 msgid "Common Properties"
-msgstr "Proprietà comuni"
+msgstr "Proprietà generali"
 
-#: fileItem.js:883
+#: fileItemMenu.js:309
 msgid "Properties"
 msgstr "Proprietà"
 
-#: fileItem.js:887
-#, fuzzy
+#: fileItemMenu.js:316
 msgid "Show All in Files"
 msgstr "Mostra tutto in File"
 
-#: fileItem.js:887
+#: fileItemMenu.js:316
 msgid "Show in Files"
 msgstr "Mostra in File"
 
-#: preferences.js:88
+#: fileItemMenu.js:405
+msgid "Select Extract Destination"
+msgstr "Seleziona la destinazione per l'estrazione"
+
+#: fileItemMenu.js:410
+msgid "Select"
+msgstr "Seleziona"
+
+#: fileItemMenu.js:449
+msgid "Can not email a Directory"
+msgstr "Non è possibile spedire per email una cartella"
+
+#: fileItemMenu.js:450
+msgid "Selection includes a Directory, compress the directory to a file first."
+msgstr ""
+"La selezione include una cartella, comprimere prima la cartella in un file."
+
+#: preferences.js:74
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Size for the desktop icons"
 msgstr "Dimensione delle icone della scrivania"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Tiny"
 msgstr "Minuscola"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Small"
 msgstr "Piccola"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Standard"
 msgstr "Normale"
 
-#: preferences.js:94
+#: prefswindow.js:46
 msgid "Large"
 msgstr "Grande"
 
-#: preferences.js:95
+#: prefswindow.js:47
 msgid "Show the personal folder in the desktop"
 msgstr "Mostra la cartella personale sulla scrivania"
 
-#: preferences.js:96
+#: prefswindow.js:48
 msgid "Show the trash icon in the desktop"
 msgstr "Mostra il cestino sulla scrivania"
 
-#: preferences.js:97 schemas/org.gnome.shell.extensions.ding.gschema.xml:38
-#, fuzzy
+#: prefswindow.js:49 schemas/org.gnome.shell.extensions.ding.gschema.xml:45
 msgid "Show external drives in the desktop"
 msgstr "Mostra le periferiche esterne sulla scrivania"
 
-#: preferences.js:98 schemas/org.gnome.shell.extensions.ding.gschema.xml:43
-#, fuzzy
+#: prefswindow.js:50 schemas/org.gnome.shell.extensions.ding.gschema.xml:50
 msgid "Show network drives in the desktop"
 msgstr "Mostra le periferiche di rete sulla scrivania."
 
-#: preferences.js:101
-#, fuzzy
+#: prefswindow.js:53
 msgid "New icons alignment"
 msgstr "Allineamento delle nuove icone"
 
-#: preferences.js:102
+#: prefswindow.js:54
 msgid "Top-left corner"
 msgstr "Angolo in alto a sinistra"
 
-#: preferences.js:103
+#: prefswindow.js:55
 msgid "Top-right corner"
 msgstr "Angolo in alto a destra"
 
-#: preferences.js:104
+#: prefswindow.js:56
 msgid "Bottom-left corner"
 msgstr "Angolo in basso a sinistra"
 
-#: preferences.js:105
+#: prefswindow.js:57
 msgid "Bottom-right corner"
 msgstr "Angolo in basso a destra"
 
-#: preferences.js:107 schemas/org.gnome.shell.extensions.ding.gschema.xml:48
+#: prefswindow.js:59 schemas/org.gnome.shell.extensions.ding.gschema.xml:55
 msgid "Add new drives to the opposite side of the screen"
 msgstr "Aggiungi le nuove periferiche sul lato opposto dello schermo"
 
-#: preferences.js:108
+#: prefswindow.js:60
 msgid "Highlight the drop place during Drag'n'Drop"
 msgstr "Evidenzia il punto di rilascio durante il trascinamento"
 
-#: preferences.js:112
+#: prefswindow.js:61 schemas/org.gnome.shell.extensions.ding.gschema.xml:90
+msgid "Use Nemo to open folders"
+msgstr ""
+
+#: prefswindow.js:63
+msgid "Add an emblem to soft links"
+msgstr ""
+
+#: prefswindow.js:65
+msgid "Use dark text in icon labels"
+msgstr ""
+
+#. Nautilus options
+#: prefswindow.js:71
 msgid "Settings shared with Nautilus"
 msgstr "Impostazioni condivise con Nautilus"
 
-#: preferences.js:118
+#: prefswindow.js:90
 msgid "Click type for open files"
 msgstr "Tipo di click per aprire i file"
 
-#: preferences.js:118
+#: prefswindow.js:90
 msgid "Single click"
 msgstr "Click singolo"
 
-#: preferences.js:118
+#: prefswindow.js:90
 msgid "Double click"
 msgstr "Doppio click"
 
-#: preferences.js:119
-#, fuzzy
+#: prefswindow.js:91
 msgid "Show hidden files"
 msgstr "Mostra i file nascosti"
 
-#: preferences.js:120
+#: prefswindow.js:92
 msgid "Show a context menu item to delete permanently"
 msgstr "Mostra un elemento del menù contestuale per eliminare definitivamente"
 
-#: preferences.js:123
+#: prefswindow.js:97
 msgid "Action to do when launching a program from the desktop"
 msgstr "Azione da eseguire avviando un programma dalla scrivania"
 
-#: preferences.js:124
+#: prefswindow.js:98
 msgid "Display the content of the file"
 msgstr "Mostra il contenuto del file"
 
-#: preferences.js:125
+#: prefswindow.js:99
 msgid "Launch the file"
 msgstr "Esegui il file"
 
-#: preferences.js:126
+#: prefswindow.js:100
 msgid "Ask what to do"
 msgstr "Chiedi cosa fare"
 
-#: preferences.js:130
+#: prefswindow.js:106
 msgid "Show image thumbnails"
 msgstr "Mostra le anteprime delle immagini"
 
-#: preferences.js:131
+#: prefswindow.js:107
 msgid "Never"
 msgstr "Mai"
 
-#: preferences.js:132
+#: prefswindow.js:108
 msgid "Local files only"
 msgstr "Solo i file locali"
 
-#: preferences.js:133
+#: prefswindow.js:109
 msgid "Always"
 msgstr "Sempre"
 
-#: prefs.js:37
-msgid ""
-"To configure Desktop Icons NG, do right-click in the desktop and choose the "
-"last item: 'Desktop Icons settings'"
-msgstr ""
-"Per configurare Desktop Icons NG, fai un click destro sulla scrivania e seleziona "
-"l'ultimo elemento: 'Impostazioni di Desktop Icons'"
+#: showErrorPopup.js:40
+msgid "Close"
+msgstr "Chiudi"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:18
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:25
 msgid "Icon size"
 msgstr "Dimensione dell'icona"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:19
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:26
 msgid "Set the size for the desktop icons."
 msgstr "Imposta la dimensione delle icone della scrivania."
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:23
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:30
 msgid "Show personal folder"
 msgstr "Mostra la cartella personale"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:24
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:31
 msgid "Show the personal folder in the desktop."
 msgstr "Mostra la cartella personale sulla scrivania."
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:28
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:35
 msgid "Show trash icon"
 msgstr "Mostra il cestino"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:29
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:36
 msgid "Show the trash icon in the desktop."
 msgstr "Mostra il cestino sulla scrivania."
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:33
-#, fuzzy
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:40
 msgid "New icons start corner"
 msgstr "Angolo iniziale delle nuove icone"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:34
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:41
 msgid "Set the corner from where the icons will start to be placed."
 msgstr "Imposta l'angolo da cui le icone inizieranno ad essere posizionate"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:39
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:46
 msgid "Show the disk drives connected to the computer."
 msgstr "Mostra le periferiche connesse al computer"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:44
-#, fuzzy
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:51
 msgid "Show mounted network volumes in the desktop."
 msgstr "Mostra i volumi di rete montati nella scrivania"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:49
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:56
 msgid ""
 "When adding drives and volumes to the desktop, add them to the opposite side "
 "of the screen."
@@ -439,11 +664,12 @@ msgstr ""
 "Aggiungendo periferiche e volumi alla scrivania, aggiungili sul lato opposto "
 "dello schermo."
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:53
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:60
 msgid "Shows a rectangle in the destination place during DnD"
-msgstr "Mostra un rettangolo nel punto di destinazione durante il trascinamento"
+msgstr ""
+"Mostra un rettangolo nel punto di destinazione durante il trascinamento"
 
-#: schemas/org.gnome.shell.extensions.ding.gschema.xml:54
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:61
 msgid ""
 "When doing a Drag'n'Drop operation, marks the place in the grid where the "
 "icon will be put with a semitransparent rectangle."
@@ -451,23 +677,121 @@ msgstr ""
 "Durante un'operazione di trascinamento, segna il posto nella griglia dove "
 "l'icona verrà ubicata con un rettangolo semitrasparente."
 
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:65
+msgid "Sort Special Folders - Home/Trash Drives."
+msgstr "Ordina cartelle speciali - Home/Cestino."
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:66
+msgid ""
+"When arranging Icons on desktop, to sort and change the position of the "
+"Home, Trash and mounted Network or External Drives"
+msgstr ""
+"Quando si sistemano le icone sul desktop, ordina e cambia la posizione delle "
+"cartelle Home, cestino e unità esterne o di rete montate"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:70
+msgid "Keep Icons Arranged"
+msgstr "Mantieni le icone disposte"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:71
+msgid "Always keep Icons Arranged by the last arranged order"
+msgstr "Mantieni sempre le icone disposte secondo l'ultimo ordine"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:75
+msgid "Arrange Order"
+msgstr "Disponi ordinamento"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:76
+msgid "Icons Arranged by this property"
+msgstr "Icone ordinate per questa proprietà"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:80
 #, fuzzy
+msgid "Keep Icons Stacked"
+msgstr "Mantieni le icone disposte"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:81
+msgid "Always keep Icons Stacked, Similar types are grouped"
+msgstr "Mantieni sempre le icone impilate, i tipi simili sono raggruppati"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:85
+msgid "Type of Files to not Stack"
+msgstr "Tipo di file da non impilare"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:86
+msgid "An Array of strings types, Don't Stack these types of files"
+msgstr "Un array di tipi di stringhe, non impilare questi tipi di file"
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:91
+msgid "Use Nemo instead of Nautilus to open folders."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:95
+msgid "Add an emblem to links"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:96
+msgid "Add an emblem to allow to identify soft links."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:100
+msgid "Use black for label text"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.ding.gschema.xml:101
+msgid ""
+"Paint the label text in black instead of white. Useful when using light "
+"backgrounds."
+msgstr ""
+
+#~ msgid ""
+#~ "To configure Desktop Icons NG, do right-click in the desktop and choose "
+#~ "the last item: 'Desktop Icons settings'"
+#~ msgstr ""
+#~ "Per configurare Desktop Icons NG, fai un click destro sulla scrivania e "
+#~ "seleziona l'ultimo elemento: 'Impostazioni di Desktop Icons'"
+
+#~ msgid "Do you want to run “{0}”, or display its contents?"
+#~ msgstr "Vuoi eseguire “{0}”, o visualizzare il suo contenuto?"
+
+#~ msgid "“{0}” is an executable text file."
+#~ msgstr "“{0}” è un file di testo eseguibile."
+
+#~ msgid "Execute in a terminal"
+#~ msgstr "Esegui nel Terminale"
+
+#~ msgid "Show"
+#~ msgstr "Mostra"
+
+#~ msgid "Execute"
+#~ msgstr "Esegui"
+
+#~ msgid "New folder"
+#~ msgstr "Nuova cartella"
+
+#~ msgid "Delete"
+#~ msgstr "Elimina"
+
+#~ msgid "Error while deleting files"
+#~ msgstr "Errore durante l'eliminazione dei file"
+
+#~ msgid "Are you sure you want to permanently delete these items?"
+#~ msgstr "Sei sicuro di voler eliminare definitivamente questi elementi?"
+
+#~ msgid "If you delete an item, it will be permanently lost."
+#~ msgstr "Se elimini un elemento, esso sarà perduto definitivamente."
+
 #~ msgid "Show external disk drives in the desktop"
 #~ msgstr "Mostra le periferiche esterne sulla scrivania"
 
-#, fuzzy
 #~ msgid "Show the external drives"
 #~ msgstr "Mostra le periferiche esterne"
 
-#, fuzzy
 #~ msgid "Show network volumes"
 #~ msgstr "Mostra i volumi di rete"
 
-#~ msgid "Enter file name…"
-#~ msgstr "Indicare un nome per il file…"
-
-#~ msgid "Create"
-#~ msgstr "Crea"
+#~ msgid "Enter file name..."
+#~ msgstr "Indicare un nome per il file..."
 
 #~ msgid "Folder names cannot contain “/”."
 #~ msgstr "I nomi di cartelle non possono contenere il carattere «/»"

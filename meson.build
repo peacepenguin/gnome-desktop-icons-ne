@@ -1,5 +1,5 @@
-project('desktopicons-neo',
-  version: '2.0',
+project('ding',
+  version: '47',
   license: 'GPL3'
 )
 
@@ -10,28 +10,38 @@ prefix = get_option('prefix')
 datadir = join_paths (prefix, get_option('datadir'))
 schema_dir = join_paths(datadir, 'glib-2.0', 'schemas')
 
-extensions_dir = join_paths(prefix, 'share', 'gnome-shell', 'extensions', 'desktopicons-neo@darkdemon')
+extensions_dir = join_paths(prefix, 'share', 'gnome-shell', 'extensions', 'ding@rastersoft.com')
 
 install_data([
-#    'createFolderDialog.js',
-    'askNamePopup.js',
+    'autoAr.js',
     'askRenamePopup.js',
     'createThumbnail.js',
+    'dbusInterfaces.js',
     'dbusUtils.js',
     'desktopGrid.js',
+    'desktopIconItem.js',
     'desktopIconsUtil.js',
     'desktopManager.js',
-    'desktopicons-neo.js',
+    'ding.js',
     'emulateX11WindowType.js',
     'enums.js',
     'extension.js',
     'fileItem.js',
+    'fileItemMenu.js',
+    'fileUtils.js',
+    'gnomeShellOverride.js',
     'metadata.json',
+    'notifyX11UnderWayland.js',
     'prefs.js',
     'preferences.js',
+    'prefswindow.js',
+    'promiseUtils.js',
+    'stackItem.js',
     'showErrorPopup.js',
     'stylesheet.css',
-    'templateManager.js'
+    'templatesScriptsManager.js',
+    'thumbnails.js',
+    'visibleArea.js'
   ],
   install_dir: extensions_dir
 )

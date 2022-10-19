@@ -1,23 +1,23 @@
-/* LICENSE INFORMATION
- * 
- * Desktop Icons: Neo - A desktop icons extension for GNOME with numerous features, 
- * customizations, and optimizations.
- * 
- * Copyright 2021 Abdurahman Elmawi (cooper64doom@gmail.com)
- * 
- * This project is based on Desktop Icons NG (https://gitlab.com/rastersoft/desktop-icons-ng),
- * a desktop icons extension for GNOME licensed under the GPL v3.
- * 
- * This project is free and open source software as described in the GPL v3.
- * 
- * This project (Desktop Icons: Neo) is licensed under the GPL v3. To view the details of this license, 
- * visit https://www.gnu.org/licenses/gpl-3.0.html for the necessary information
- * regarding this project's license.
+/* DING: Desktop Icons New Generation for GNOME Shell
+ *
+ * Copyright (C) 2019 Sergio Costas (rastersoft@gmail.com)
+ * Based on code original (C) Carlos Soriano
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 var ICON_SIZE = { 'tiny': 36, 'small': 48, 'standard': 64, 'large': 96 };
 var ICON_WIDTH = { 'tiny': 70, 'small': 90, 'standard': 120, 'large': 130 };
-//var ICON_HEIGHT = { 'tiny': 70, 'small': 90, 'standard': 106, 'large': 138 };
 var ICON_HEIGHT = { 'tiny': 80, 'small': 90, 'standard': 106, 'large': 138 };
 
 var START_CORNER = { 'top-left':     [false, false],
@@ -29,7 +29,8 @@ var FileType = {
     NONE: null,
     USER_DIRECTORY_HOME: 'show-home',
     USER_DIRECTORY_TRASH: 'show-trash',
-    EXTERNAL_DRIVE: 'external-drive'
+    EXTERNAL_DRIVE: 'external-drive',
+    STACK_TOP: 'stack-top'
 }
 
 var StoredCoordinates = {
@@ -77,11 +78,26 @@ var SortOrder = {
     SIZE: 'size'
 };
 
+var CompressionType = {
+    ZIP: 0,
+    TAR_XZ: 1,
+    SEVEN_ZIP: 2,
+    ENCRYPTED_ZIP: 3
+};
+
+var DndTargetInfo = {
+    DING_ICON_LIST: 0,
+    GNOME_ICON_LIST: 1,
+    URI_LIST: 2,
+    TEXT_PLAIN: 3,
+};
+
 var DEFAULT_ATTRIBUTES = 'metadata::*,standard::*,access::*,time::modified,unix::mode';
 var TERMINAL_SCHEMA = 'org.gnome.desktop.default-applications.terminal';
 var SCHEMA_NAUTILUS = 'org.gnome.nautilus.preferences';
+var SCHEMA_NAUTILUS_COMPRESSION = 'org.gnome.nautilus.compression';
 var SCHEMA_GTK = 'org.gtk.Settings.FileChooser';
-var SCHEMA = 'org.gnome.shell.extensions.desktopicons-neo';
+var SCHEMA = 'org.gnome.shell.extensions.ding';
 var SCHEMA_MUTTER = 'org.gnome.mutter';
 var EXEC_KEY = 'exec';
 var NAUTILUS_SCRIPTS_DIR = '.local/share/nautilus/scripts';

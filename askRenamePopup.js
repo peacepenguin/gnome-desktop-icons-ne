@@ -1,18 +1,19 @@
-/* LICENSE INFORMATION
- * 
- * Desktop Icons: Neo - A desktop icons extension for GNOME with numerous features, 
- * customizations, and optimizations.
- * 
- * Copyright 2021 Abdurahman Elmawi (cooper64doom@gmail.com)
- * 
- * This project is based on Desktop Icons NG (https://gitlab.com/rastersoft/desktop-icons-ng),
- * a desktop icons extension for GNOME licensed under the GPL v3.
- * 
- * This project is free and open source software as described in the GPL v3.
- * 
- * This project (Desktop Icons: Neo) is licensed under the GPL v3. To view the details of this license, 
- * visit https://www.gnu.org/licenses/gpl-3.0.html for the necessary information
- * regarding this project's license.
+/* DING: Desktop Icons New Generation for GNOME Shell
+ *
+ * Copyright (C) 2019 Sergio Costas (rastersoft@gmail.com)
+ * Based on code original (C) Carlos Soriano
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 const Gtk = imports.gi.Gtk;
@@ -20,17 +21,19 @@ const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const DBusUtils = imports.dbusUtils;
 const DesktopIconsUtil = imports.desktopIconsUtil;
-const Gettext = imports.gettext.domain('desktopicons-neo');
+const Gettext = imports.gettext.domain('ding');
 
 const _ = Gettext.gettext;
 
 var AskRenamePopup = class {
 
-    constructor(fileItem) {
+    constructor(fileItem, allowReturnOnSameName, closeCB) {
 
+        this._closeCB = closeCB;
+        this._allowReturnOnSameName = allowReturnOnSameName;
         this._desktopPath = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DESKTOP);
         this._fileItem = fileItem;
-        this._popover = new Gtk.Popover({relative_to: fileItem._container,
+        this._popover = new Gtk.Popover({relative_to: fileItem._iconContainer,
                                          modal: true});
         let contentBox = new Gtk.Grid({row_spacing: 6,
                                        column_spacing: 6,
@@ -43,7 +46,7 @@ var AskRenamePopup = class {
         this._textArea = new Gtk.Entry();
         this._textArea.text = fileItem.fileName;
         contentBox.attach(this._textArea, 0, 1, 1, 1);
-        this._button = new Gtk.Button({label: _("Rename")});
+        this._button = new Gtk.Button({label: allowReturnOnSameName ? _("OK") : _("Rename")});
         contentBox.attach(this._button, 1, 1, 1, 1);
         this._button.connect('clicked', () => {
             this._do_rename();
@@ -56,20 +59,39 @@ var AskRenamePopup = class {
                 this._do_rename();
             }
         });
+        this._popover.connect('closed', () => {
+            closeCB();
+        });
         this._textArea.set_can_default(true);
         this._popover.set_default_widget(this._textArea);
         this._button.get_style_context().add_class("suggested-action");
-        this._popover.show_all();
+        contentBox.show_all();
+        this._popover.popup();
         this._validate();
         this._textArea.grab_focus_without_selecting();
         this._textArea.select_region(0, DesktopIconsUtil.getFileExtensionOffset(fileItem.fileName, fileItem.isDirectory));
+    }
+
+    updateFileItem(fileItem) {
+        this._fileItem = fileItem;
+        if (fileItem) {
+            this._popover.set_relative_to(this._fileItem._iconContainer);
+            this._popover.modal = true;
+            this._textArea.set_position(this._cursorPosition);
+        } else {
+            this._cursorPosition = this._textArea.get_position();
+            this._popover.modal = false;
+            this._popover.set_relative_to(null);
+        }
     }
 
     _validate() {
         let text = this._textArea.text;
         let final_path = this._desktopPath + '/' + text;
         let final_file = Gio.File.new_for_commandline_arg(final_path);
-        if ((text == '') || (-1 != text.indexOf('/')) || (text == this._fileItem.fileName) || final_file.query_exists(null)) {
+        if ((text == '') || (-1 != text.indexOf('/')) ||
+           ((text == this._fileItem.fileName) && (!this._allowReturnOnSameName)) ||
+           (final_file.query_exists(null) && (text != this._fileItem.fileName))) {
             this._button.sensitive = false;
         } else {
             this._button.sensitive = true;
@@ -77,13 +99,18 @@ var AskRenamePopup = class {
     }
 
     _do_rename() {
-        DBusUtils.NautilusFileOperations2Proxy.RenameURIRemote(
+        this._popover.popdown();
+        this._closeCB();
+        if (this._fileItem.fileName == this._textArea.text) {
+            return;
+        }
+        DBusUtils.RemoteFileOperations.RenameURIRemote(
             this._fileItem.file.get_uri(), this._textArea.text,
-            DBusUtils.NautilusFileOperations2Proxy.platformData(),
-            (result, error) => {
-                if (error)
-                    throw new Error('Error renaming file: ' + error.message);
-            }
         );
+    }
+
+    closeWindow() {
+        this._popover.popdown();
+        this._closeCB();
     }
 };

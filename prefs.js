@@ -1,42 +1,53 @@
-/* LICENSE INFORMATION
- * 
- * Desktop Icons: Neo - A desktop icons extension for GNOME with numerous features, 
- * customizations, and optimizations.
- * 
- * Copyright 2021 Abdurahman Elmawi (cooper64doom@gmail.com)
- * 
- * This project is based on Desktop Icons NG (https://gitlab.com/rastersoft/desktop-icons-ng),
- * a desktop icons extension for GNOME licensed under the GPL v3.
- * 
- * This project is free and open source software as described in the GPL v3.
- * 
- * This project (Desktop Icons: Neo) is licensed under the GPL v3. To view the details of this license, 
- * visit https://www.gnu.org/licenses/gpl-3.0.html for the necessary information
- * regarding this project's license.
+
+/* Desktop Icons GNOME Shell extension
+ *
+ * Copyright (C) 2019 Sergio Costas (rastersoft@gmail.com)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 const Gtk = imports.gi.Gtk;
-const Pango = imports.gi.Pango;
+const Gio = imports.gi.Gio;
+const GioSSS = Gio.SettingsSchemaSource;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Gettext = imports.gettext;
+const Me = ExtensionUtils.getCurrentExtension();
+const Enums = Me.imports.enums;
+const PrefsWindow = Me.imports.prefswindow;
 
-
-var _ = Gettext.domain('desktopicons-neo').gettext;
+var _ = Gettext.domain('ding').gettext;
 
 function init() {}
 
 function buildPrefsWidget() {
-    let extension = ExtensionUtils.getCurrentExtension();
 
-    let localedir = extension.dir.get_child('locale');
+    let schemaSource = GioSSS.get_default();
+    let schemaGtk = schemaSource.lookup(Enums.SCHEMA_GTK, true);
+    let gtkSettings = new Gio.Settings({ settings_schema: schemaGtk });
+    let schemaObj = schemaSource.lookup(Enums.SCHEMA_NAUTILUS, true);
+    if (!schemaObj) {
+        var nautilusSettings = null;
+    } else {
+        var nautilusSettings = new Gio.Settings({ settings_schema: schemaObj });;
+    }
+    let desktopSettings = PrefsWindow.get_schema(Me.dir.get_path(), Enums.SCHEMA);
+
+    let localedir = Me.dir.get_child('locale');
     if (localedir.query_exists(null))
-        Gettext.bindtextdomain('desktopicons-neo', localedir.get_path());
+        Gettext.bindtextdomain('ding', localedir.get_path());
 
-    let frame = new Gtk.Label({ label: _("To configure Desktop Icons: Neo, right-click a blank space on the desktop and choose 'Desktop Icon Settings'"),
-                                lines: 5,
-                                justify: Gtk.Justification.CENTER,
-                                wrap: true,
-                                wrap_mode: Pango.WrapMode.WORD});
+    let frame = PrefsWindow.preferencesFrame(Gtk, desktopSettings, nautilusSettings, gtkSettings);
     if (frame.show_all) {
         frame.show_all();
     } else {
